@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chat Page</title>
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Chat WebAPP</h1>
+            <br><hr>
+
+            <% for(chat of chats) {%>
+            <div class="main">
+                <h3>From : <%=chat.from %></h3>
+                <h3>To : <%=chat.to %></h3>
+                <h3>Message : <b><i><%=chat.message %></i></b></h3>
+                <h3>TimeLine : <%=chat.timeline %></h3>
+                <div class="button">
+                <a href="http://localhost/8080/<%=chat.id%>/edit"><button>Edit Message</button></a>
+                <form action="/chats/<%=chat.id%>/delete?_method='DELETE'" method="POST" >
+                    <button>Delete Message</button>
+                </form>
+            </div>
+            <a href="http://localhost/8080/chats/new"><button>Add New Chat</button></a>
+            </div>
+            <% } %>
+
+        </div>
+    </body>
+</html>

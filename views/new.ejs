@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Add Chat</title>
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Add a New Chat/Message</h1>
+            <br><hr>
+            <div class="main">
+                <form action="/chats/new"></form>
+                <h3>From : <%=chat.from %></h3>
+                <h3>To : <%=chat.to %></h3>
+                <h3>TimeLine : <%=chat.timeline %></h3>
+                <form action="/chats/<%=chat.id%>/edit?_method='PUT" method="POST">
+                    <textarea name="message" id="message" cols="30" rows="10"><%=post.message %></textarea>
+                    <button>Edit Message</button>
+                </form>
+            </div>
+        </body>
+    </html>
